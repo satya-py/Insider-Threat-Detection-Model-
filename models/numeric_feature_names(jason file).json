@@ -1,0 +1,22 @@
+[
+  "logon_cnt",
+  "http_cnt",
+  "email_cnt",
+  "usb_cnt",
+  "logon_after_hours_pct",
+  "logon_weekend_cnt",
+  "logon_hour_entropy",
+  "logon_dow_entropy",
+  "usb_act_Connect",
+  "usb_act_Disconnect",
+  "usb_after_hours_pct",
+  "usb_weekend_cnt",
+  "email_to_http_ratio",
+  "usb_to_logon_ratio",
+  "O",
+  "C",
+  "E",
+  "A",
+  "N",
+  "psych_risk"
+]

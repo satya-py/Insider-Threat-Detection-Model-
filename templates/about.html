@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Insider Threat Detection System</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('home') }}">
+                <i class="fas fa-shield-alt me-2"></i>
+                Insider Threat Detection
+            </a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+                <a class="nav-link" href="{{ url_for('predict_page') }}">Analyze Employee</a>
+                <a class="nav-link active" href="{{ url_for('about') }}">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <!-- Page header -->
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <h1 class="display-4">
+                    <i class="fas fa-info-circle me-3 text-primary"></i>
+                    About the System
+                </h1>
+                <p class="lead text-muted">
+                    Understanding our machine learning approach to insider threat detection
+                </p>
+            </div>
+        </div>
+
+        <!-- System Overview -->
+        <div class="row mb-5">
+            <div class="col-lg-8 mx-auto">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="mb-0">
+                            <i class="fas fa-cogs me-2"></i>
+                            System Overview
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="lead">
+                            Our Insider Threat Detection System uses advanced machine learning algorithms to analyze
+                            employee behavior patterns and identify potential security risks within organizations.
+                        </p>
+                        <p>
+                            The system processes <strong>{{ total_features }} distinct features</strong> that capture
+                            various aspects of employee behavior, including digital activity patterns, device usage,
+                            and psychological profiles. By combining these diverse data sources, we can provide
+                            comprehensive risk assessments with high accuracy.
+                        </p>
+
+                        <div class="row mt-4">
+                            <div class="col-sm-6">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-robot fa-2x text-primary me-3"></i>
+                                    <div>
+                                        <h6 class="mb-0">Machine Learning Model</h6>
+                                        <small class="text-muted">Advanced AI-powered detection</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-clock fa-2x text-success me-3"></i>
+                                    <div>
+                                        <h6 class="mb-0">Real-time Analysis</h6>
+                                        <small class="text-muted">Instant risk assessment</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature Categories -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="text-center mb-4">
+                    <i class="fas fa-list-check me-2"></i>
+                    Analyzed Features
+                </h2>
+
+                <div class="row">
+                    <!-- Activity Patterns -->
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-header bg-info text-white">
+                                <h5 class="mb-0">
+                                    <i class="fas fa-chart-line me-2"></i>
+                                    Activity Patterns
+                                </h5>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Digital activity and behavioral patterns that indicate normal vs. suspicious behavior.
+                                </p>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><i class="fas fa-sign-in-alt text-primary me-2"></i>Login frequency and patterns</li>
+                                    <li class="list-group-item"><i class="fas fa-globe text-primary me-2"></i>HTTP request behaviors</li>
+                                    <li class="list-group-item"><i class="fas fa-envelope text-primary me-2"></i>Email communication patterns</li>
+                                    <li class="list-group-item"><i class="fas fa-moon text-primary me-2"></i>After-hours activity levels</li>
+                                    <li class="list-group-item"><i class="fas fa-calendar-weekend text-primary me-2"></i>Weekend usage patterns</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Device Usage -->
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-header bg-success text-white">
+                                <h5 class="mb-0">
+                                    <i class="fas fa-usb me-2"></i>
+                                    Device Usage
+                                </h5>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">
+                                    USB device interactions and external storage usage patterns.
+                                </p>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><i class="fas fa-plug text-success me-2"></i>USB connection frequency</li>
+                                    <li class="list-group-item"><i class="fas fa-unlink text-success me-2"></i>Device disconnect patterns</li>
+                                    <li class="list-group-item"><i class="fas fa-clock text-success me-2"></i>Unusual timing indicators</li>
+                                    <li class="list-group-item"><i class="fas fa-exclamation-triangle text-success me-2"></i>Anomalous usage detection</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- Psychological Factors -->
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-header bg-warning text-dark">
+                                <h5 class="mb-0">
+                                    <i class="fas fa-brain me-2"></i>
+                                    Psychological Factors
+                                </h5>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Big Five personality traits and psychological risk indicators.
+                                </p>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><i class="fas fa-eye text-warning me-2"></i><strong>Openness:</strong> Creativity and openness to experience</li>
+                                    <li class="list-group-item"><i class="fas fa-tasks text-warning me-2"></i><strong>Conscientiousness:</strong> Organization and responsibility</li>
+                                    <li class="list-group-item"><i class="fas fa-users text-warning me-2"></i><strong>Extraversion:</strong> Social engagement level</li>
+                                    <li class="list-group-item"><i class="fas fa-handshake text-warning me-2"></i><strong>Agreeableness:</strong> Cooperation and trust</li>
+                                    <li class="list-group-item"><i class="fas fa-sad-tear text-warning me-2"></i><strong>Neuroticism:</strong> Emotional stability</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Behavioral Metrics -->
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-header bg-danger text-white">
+                                <h5 class="mb-0">
+                                    <i class="fas fa-calculator me-2"></i>
+                                    Behavioral Metrics
+                                </h5>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Advanced metrics and ratios that reveal behavioral anomalies.
+                                </p>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><i class="fas fa-percentage text-danger me-2"></i>Activity ratios and correlations</li>
+                                    <li class="list-group-item"><i class="fas fa-random text-danger me-2"></i>Entropy and variability measures</li>
+                                    <li class="list-group-item"><i class="fas fa-exclamation text-danger me-2"></i>Risk assessment scores</li>
+                                    <li class="list-group-item"><i class="fas fa-chart-area text-danger me-2"></i>Baseline deviation indicators</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Detailed Feature Descriptions -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="text-center mb-4">
+                    <i class="fas fa-microscope me-2"></i>
+                    Feature Descriptions
+                </h2>
+
+                <div class="accordion" id="featureAccordion">
+                    {% for feature, description in feature_descriptions.items() %}
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading{{ loop.index }}">
+                            <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapse{{ loop.index }}"
+                                    aria-expanded="false"
+                                    aria-controls="collapse{{ loop.index }}">
+                                <i class="fas fa-{{ 'chart-line' if 'cnt' in feature or 'pct' in feature
+                                                else 'usb' if 'usb' in feature
+                                                else 'brain' if feature in ['O', 'C', 'E', 'A', 'N', 'psych_risk']
+                                                else 'calculator' }} me-2"></i>
+                                <strong>{{ feature }}</strong>
+                                <span class="ms-2 text-muted">- {{ feature.replace('_', ' ').title() }}</span>
+                            </button>
+                        </h2>
+                        <div id="collapse{{ loop.index }}"
+                             class="accordion-collapse collapse"
+                             aria-labelledby="heading{{ loop.index }}"
+                             data-bs-parent="#featureAccordion">
+                            <div class="accordion-body">
+                                <p>{{ description }}</p>
+
+                                <!-- Additional context based on feature type -->
+                                {% if 'pct' in feature %}
+                                    <div class="alert alert-info">
+                                        <small><i class="fas fa-info-circle me-1"></i>
+                                        <strong>Input Range:</strong> 0-100 (percentage value)
+                                        </small>
+                                    </div>
+                                {% elif feature in ['O', 'C', 'E', 'A', 'N'] %}
+                                    <div class="alert alert-warning">
+                                        <small><i class="fas fa-info-circle me-1"></i>
+                                        <strong>Typical Range:</strong> 1-5 (personality trait scale)
+                                        </small>
+                                    </div>
+                                {% elif 'ratio' in feature %}
+                                    <div class="alert alert-secondary">
+                                        <small><i class="fas fa-info-circle me-1"></i>
+                                        <strong>Calculation:</strong> This is typically a decimal value representing the ratio between two activities
+                                        </small>
+                                    </div>
+                                {% elif 'entropy' in feature %}
+                                    <div class="alert alert-light">
+                                        <small><i class="fas fa-info-circle me-1"></i>
+                                        <strong>Interpretation:</strong> Higher values indicate more randomness/unpredictability in behavior
+                                        </small>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Model Information -->
+        <div class="row mb-5">
+            <div class="col-lg-8 mx-auto">
+                <div class="card">
+                    <div class="card-header bg-dark text-white">
+                        <h4 class="mb-0">
+                            <i class="fas fa-brain me-2"></i>
+                            Model Information
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6><i class="fas fa-database me-2 text-primary"></i>Data Processing:</h6>
+                                <ul>
+                                    <li>Feature normalization and scaling</li>
+                                    <li>Behavioral pattern analysis</li>
+                                    <li>Anomaly detection algorithms</li>
+                                    <li>Multi-dimensional risk scoring</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h6><i class="fas fa-shield-alt me-2 text-success"></i>Security Features:</h6>
+                                <ul>
+                                    <li>Privacy-preserving analysis</li>
+                                    <li>Secure data handling</li>
+                                    <li>Real-time threat assessment</li>
+                                    <li>Actionable risk recommendations</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-warning mt-4">
+                            <h6><i class="fas fa-exclamation-triangle me-2"></i>Important Disclaimer:</h6>
+                            <p class="mb-0">
+                                This system provides risk assessments based on behavioral patterns and should be used
+                                as a tool to support human decision-making, not replace it. Always involve security
+                                professionals in the evaluation of potential threats and consider multiple factors
+                                beyond algorithmic predictions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Usage Guidelines -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="text-center mb-4">
+                    <i class="fas fa-book me-2"></i>
+                    Usage Guidelines
+                </h2>
+
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-upload fa-3x text-primary mb-3"></i>
+                                <h5>1. Data Collection</h5>
+                                <p class="text-muted">
+                                    Gather comprehensive behavioral data including login patterns,
+                                    device usage, and personality assessments.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-search fa-3x text-success mb-3"></i>
+                                <h5>2. Risk Analysis</h5>
+                                <p class="text-muted">
+                                    Input the data into our system to receive detailed
+                                    risk assessment and threat probability scores.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-clipboard-check fa-3x text-warning mb-3"></i>
+                                <h5>3. Review Results</h5>
+                                <p class="text-muted">
+                                    Analyze the results with security teams and implement
+                                    appropriate monitoring or intervention measures.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="card bg-primary text-white">
+                    <div class="card-body py-5">
+                        <h3 class="mb-4">Ready to Get Started?</h3>
+                        <p class="lead mb-4">
+                            Begin analyzing employee risk patterns with our advanced detection system.
+                        </p>
+                        <a href="{{ url_for('predict_page') }}" class="btn btn-light btn-lg me-3">
+                            <i class="fas fa-play me-2"></i>
+                            Start Analysis
+                        </a>
+                        <a href="{{ url_for('home') }}" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-home me-2"></i>
+                            Back to Home
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light mt-5 py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h5><i class="fas fa-shield-alt me-2"></i>Insider Threat Detection System</h5>
+                    <p class="mb-0">Advanced machine learning for organizational security</p>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <p class="mb-0"><strong>Total Features:</strong> {{ total_features }}</p>
+                    <small class="text-muted">Comprehensive behavioral analysis</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Initialize Bootstrap tooltips
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+
+        // Add smooth animations to cards when they come into view
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Apply animation to cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
