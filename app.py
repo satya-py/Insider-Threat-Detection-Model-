@@ -1,6 +1,11 @@
 from flask import Flask, render_template, request, jsonify, flash, redirect, url_for
 from utils.insider_threat_model_loader import InsiderThreatModelLoader
 import os
+from htmlminify import minify
+import sys, types
+sys.modules['cgi'] = types.ModuleType('cgi')
+
+
 
 # Create Flask application instance
 app = Flask(__name__)
